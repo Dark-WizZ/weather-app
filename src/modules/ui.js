@@ -17,7 +17,8 @@ export default class UI {
     this.locationIP = document.getElementById('locationIP');
     this.temperature = document.querySelector('.temperature');
     this.state = document.querySelector('.state');
-    this.error = document.querySelector('.error');
+    this.nameError = document.querySelector('.error.name');
+    this.emptyError = document.querySelector('.error.empty');
     this.search = document.querySelector('.search');
   }
 
@@ -43,12 +44,17 @@ export default class UI {
   static async temperatureRender(){
     const stateName = locationIP.value
     Weather.city = (stateName)? stateName: Weather.city;
-    await Weather.fetchData();
-    if(Weather.error){
-      this.error.style.display = 'block';
+    if(Weather.city=='' || !stateName){
+      this.emptyError.style.display = 'block';
       return;
     }
-    this.error.style.display = 'none';
+    this.emptyError.style.display = 'none';
+    await Weather.fetchData();
+    if(Weather.error){
+      this.nameError.style.display = 'block';
+      return;
+    }
+    this.nameError.style.display = 'none';
     this.temperature.textContent = `${Weather.tempereature}`;
     this.state.textContent = Weather.city.toUpperCase();
   }

@@ -4,7 +4,7 @@ export default class Weather{
   static units = 'metric'
   static tempereature;
   static symbol = '°C';
-  static city;
+  static city ='';
   static error=false;
 
   static async fetchData(){
