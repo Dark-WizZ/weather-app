@@ -1,24 +1,45 @@
 html, body{
   height: 100%;
+  background-image: linear-gradient(to bottom, rgb(50, 0, 126), rgb(199, 70, 0));
 }
 *{
   box-sizing: border-box;
-}
-body{
 }
 .content{
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
-  padding-top: 100px;
+  padding: 100px 0;
+}
+.result{
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
 }
 .temperature{
   place-self: center;
-  font-size: 100px;
+  font-size: 6rem;
+  cursor: pointer;
+
+}
+.location{
+  display: grid;
+  place-content: center;
 }
 input{
   justify-self: center;
   border-radius: 5px;
   border: 1px solid black;
   min-width: 200px;
+  font-size: 1.5rem;
+  padding:0.3em;
+}
+.state{
+  font-size: 1.3rem;
+  justify-self: end;
+}
+.error{
+  color: orangered;
+  font-weight: 600;
+  display: none;
 }
