@@ -17,7 +17,8 @@ export default class UI {
     this.locationIP = document.getElementById('locationIP');
     this.temperature = document.querySelector('.temperature');
     this.state = document.querySelector('.state');
-    this.error = document.querySelector('.error')
+    this.error = document.querySelector('.error');
+    this.search = document.querySelector('.search');
   }
 
   static bindEvents(){
@@ -25,6 +26,7 @@ export default class UI {
       this.locationIPEnter(e.key)
     });
     this.temperature.addEventListener('click', this.temperatureClk.bind(this));
+    this.search.addEventListener('click', this.temperatureRender.bind(this));
   }
 
   static temperatureClk(e){

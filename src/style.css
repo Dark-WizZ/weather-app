@@ -1,5 +1,8 @@
 html, body{
   height: 100%;
+  margin:0;
+}
+body{
   background-image: linear-gradient(to bottom, rgb(50, 0, 126), rgb(199, 70, 0));
 }
 *{
@@ -42,4 +45,18 @@ input{
   color: orangered;
   font-weight: 600;
   display: none;
+}
+.locationIP{
+  position: relative;
+}
+.search{
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  height: 1.5rem;
+  margin: auto 0;
+}
+.search:hover{
+  height: 2rem;
 }
