@@ -9,8 +9,8 @@ export default class Weather{
 
   static async fetchData(){
     try{
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&APPID=${this.api}&units=${this.units}`;
-      const response = await fetch(url, {mode:"cors"});
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&APPID=${this.api}&units=${this.units}`;
+      const response = await fetch(url);
       const data = await response.json();
       if(data.cod==404){
         this.error = true;
